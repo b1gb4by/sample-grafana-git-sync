@@ -24,8 +24,34 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "links": [],
+    "links": [
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [],
+        "targetBlank": true,
+        "title": "Source (GitHub)",
+        "tooltip": "View source file in repository",
+        "type": "link",
+        "url": "https://github.com/b1gb4by/sample-grafana-git-sync/blob/main/dashboards/test-dashboard-2025-12-11-hno9c.json"
+      }
+    ],
     "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 3,
+        "panels": [],
+        "title": "Row title",
+        "type": "row"
+      },
       {
         "datasource": {
           "type": "datasource",
@@ -91,9 +117,9 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 0
+          "y": 1
         },
-        "id": 1,
+        "id": 2,
         "options": {
           "legend": {
             "calcs": [],
@@ -110,6 +136,66 @@
         "pluginVersion": "12.4.0-20117635118",
         "targets": [
           {
+            "refId": "A"
+          }
+        ],
+        "title": "New panel",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 1
+        },
+        "id": 1,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "12.4.0-20117635118",
+        "targets": [
+          {
             "datasource": {
               "type": "datasource",
               "uid": "grafana"
@@ -118,7 +204,7 @@
           }
         ],
         "title": "Sample Panel",
-        "type": "timeseries"
+        "type": "stat"
       }
     ],
     "preload": false,
